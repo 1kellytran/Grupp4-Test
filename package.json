@@ -7,6 +7,7 @@
         "test": "wdio run wdio.conf.js",
         
         "wdio": "wdio run wdio.conf.js",
+        "myTest": "wdio wdio.conf.js --spec ./test/features/search-bar-imdb.feature",
         "steps": "node ./node_modules/.bin/cucumber-js test/features/*.feature --format-options '{\"snippetInterface\":\"async-await\"}'"
     },
     "author": "",

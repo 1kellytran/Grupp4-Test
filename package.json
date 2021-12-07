@@ -6,7 +6,6 @@
     "scripts": {
         "test": "wdio run wdio.conf.js",
         "wdio": "wdio run wdio.conf.js",
-        "mytest": "wdio wdio.conf.js --spec ./test/features/navbar.feature",
         "steps": "node ./node_modules/.bin/cucumber-js test/features/*.feature --format-options '{\"snippetInterface\":\"async-await\"}'"
     },
     "author": "",

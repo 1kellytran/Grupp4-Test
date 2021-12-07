@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "wdio run wdio.conf.js",
+        
         "wdio": "wdio run wdio.conf.js",
         "steps": "node ./node_modules/.bin/cucumber-js test/features/*.feature --format-options '{\"snippetInterface\":\"async-await\"}'"
     },

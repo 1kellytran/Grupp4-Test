@@ -20,16 +20,10 @@ Feature: Top rated movies
     
      Scenario: Select by action movies
 
-        "As a user I can only action movies"
+        "As a user I can only see action movies"
 
-        Given I am on Top 250 Movies page
+        Given I am on Top office page
         When I click on action in charts
         Then I can view action movies
 
-    Scenario: Select by year
-
-        "I can sort the results"
-        
-        Given I am on the Top 250 page
-        When I choose release date in the select menu
-        Then I can view movies ordered by release date
+  

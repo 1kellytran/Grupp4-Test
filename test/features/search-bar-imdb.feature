@@ -15,12 +15,13 @@ Feature: Search IMDB
         "When i type in the search field, a dropdown appears"
         Given I am on the IMDB website
         When I enter a search parameter
-        And The paramter is valid
+        And The parameter is valid
         Then A dropdown with suggestions appear
 
     Scenario: Scenario name
 
         "The dropdown contains suggestions based on the search"
-        Given I've entered a parameter in the searchbar
+        Given I am on the IMDB website
+        And I've entered a valid parameter in the searchbar
         When I choose a suggestion
         Then I can see its details

@@ -2,12 +2,12 @@ const { Given, When, Then } = require('@wdio/cucumber-framework');
 
 const baseUrl = "https://www.imdb.com/";
 
-Given(/^I am on the IMDB site$/, async () => {
-    await browser.url(baseUrl);
+// Given(/^I am on the IMDB site$/, async () => {
+//     await browser.url(baseUrl);
 
-    const result = await browser.getUrl();
-    expect(result).toBe(baseUrl);
-});
+//     const result = await browser.getUrl();
+//     expect(result).toBe(baseUrl);
+// });
 
 When(/^I click on the menu button$/, async () => {
 

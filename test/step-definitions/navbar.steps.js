@@ -38,8 +38,8 @@ Given(/^I am in the menu on IMDB website$/, async () => {
 });
 
 When(/^I click the close button$/, async () => {
-	const closeButton = await $('#imdbHeader > div.ipc-page-content-container.ipc-page-content-container--center.navbar__inner > aside > div > div._3rHHDKyPLOjL8tGKHWMRza > label > svg > path:nth-child(2)');
-    // const closeButton = await $('label[title="Close Navigation Drawer"]');
+	// const closeButton = await $('#imdbHeader > div.ipc-page-content-container.ipc-page-content-container--center.navbar__inner > aside > div > div._3rHHDKyPLOjL8tGKHWMRza > label > svg > path:nth-child(2)');
+    const closeButton = await $('label[title="Close Navigation Drawer"]');
     await closeButton.click();
     
 });
@@ -60,12 +60,17 @@ Given(/^I am in the menu$/, async () => {
 });
 
 When(/^I click on TV Shows$/, async () => {
-	await $('//*[@id="imdbHeader"]/div[2]/aside/div/div[2]/div/div[2]/div[1]/span/label/span[2]').click();
+    // await $$('span[class="_2aunAih-uMfbdgTUIjnQMd"]')[1].click();
+    await $$('._2aunAih-uMfbdgTUIjnQMd')[1].click();
+	// await $('//*[@id="imdbHeader"]/div[2]/aside/div/div[2]/div/div[2]/div[1]/span/label/span[2]').click();
 });
 
 When(/^I click on TV News$/, async () => {
-    // await browser.debug();
-	await $('//*[@id="imdbHeader"]/div[2]/aside/div/div[2]/div/div[2]/div[1]/span/div/div/ul/a[5]').click();
+    
+	await $('=TV News')
+        // .waitForDisplayed({ timeout: 3000 })
+        .click();
+
 });
 
 Then(/^I can view news related to TV$/, async () => {

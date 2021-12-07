@@ -19,15 +19,15 @@ Feature: Search IMDB
         "When i type in the search field, a dropdown appears"
 
         Given I am on the IMDB website
-        When I've entered "Daniel Radcliffe" in the search bar
-        Then A dropdown containing searchresults about "Daniel Radcliffe" appears
-
+        When I enter a search parameter
+        And The parameter is valid
+        Then A dropdown with suggestions appear
 
 
     Scenario: Select option from dropdown
 
         "The dropdown contains suggestions based on the search"
-
-        Given I've entered "Daniel Radcliffe" in the searchbar
+        Given I am on the IMDB website
+        And I've entered a valid parameter in the searchbar
         When I choose a suggestion
         Then I can see details about "Daniel Radcliffe"

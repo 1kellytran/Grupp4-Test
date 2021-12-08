@@ -43,14 +43,14 @@ Given(/^I've entered "([^"]*)" in the searchbar$/, async (text) => {
     await browser.url('https://www.imdb.com/');
     const searchInput = await $('#suggestion-search');
     await searchInput.addValue(text);
-	expect(searchInput).toHaveValue(text);
+    const searchValue = await searchInput.getValue();
+    expect(searchValue).toHaveValue(text);
 });
 
 When(/^I choose a suggestion$/, async () => {
 	const dropDownChoice = await $('#react-autowhatever-1--item-0');
     await dropDownChoice.click();
 });
-
 
 Then(/^I can see details about "([^"]*)"$/, async (text) => {
     const imageDaniel = await $('#name-poster');

@@ -16,9 +16,6 @@ When(/^I enter "([^"]*)" in the search bar$/, async (text) => {
 
 When(/^I press enter$/, async () => {
     await browser.keys("\uE007");
-    //const searchBtn = $('#suggestion-search-button');
-    //searchBtn.click();
-    //await browser.debug(); //För att pausa!
 });
 
 Then(/^I see results matching "([^"]*)"$/, async (text) => {
@@ -26,12 +23,6 @@ Then(/^I see results matching "([^"]*)"$/, async (text) => {
     const searchBarHeader = await $('.findHeader');
     expect(await searchBarHeader.getText()).toContain(text);
 });
-
-
-
-////////////////////////////////////////////////
-
-
 
 //Tar Given från föregående test.
 
@@ -48,20 +39,11 @@ Then(/^A dropdown containing searchresults about "([^"]*)" appears$/, async (tex
     expect(dropdownMenu).toHaveTextContaining(text);
 });
 
-
-
-
-////////////////////////////////////////////////
-
-
-
-
 Given(/^I've entered "([^"]*)" in the searchbar$/, async (text) => {
     await browser.url('https://www.imdb.com/');
     const searchInput = await $('#suggestion-search');
-    searchInput.addValue(text);
+    await searchInput.addValue(text);
 	expect(searchInput).toHaveValue(text);
-    //await browser.debug();
 });
 
 When(/^I choose a suggestion$/, async () => {

@@ -6,10 +6,10 @@
     "scripts": {
         "test": "wdio run wdio.conf.js",        
         "wdio": "wdio run wdio.conf.js",
-        "kelly": "wdio wdio.conf.js --spec ./test/features/awards-page.feature",
-        "jonte": "wdio wdio.conf.js --spec ./test/features/navbar.feature",
-        "erik": "wdio wdio.conf.js --spec ./test/features/search-bar-imdb.feature",
-        "wazma": "wdio wdio.conf.js --spec ./test/features/top-rated-movies.feature",
+        "awards": "wdio wdio.conf.js --spec ./test/features/awards-page.feature",
+        "navbar": "wdio wdio.conf.js --spec ./test/features/navbar.feature",
+        "searchbar": "wdio wdio.conf.js --spec ./test/features/search-bar-imdb.feature",
+        "toprated": "wdio wdio.conf.js --spec ./test/features/top-rated-movies.feature",
         "steps": "node ./node_modules/.bin/cucumber-js test/features/*.feature --format-options '{\"snippetInterface\":\"async-await\"}'"
     },
     "author": "",

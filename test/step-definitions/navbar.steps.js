@@ -2,15 +2,10 @@ const { Given, When, Then } = require('@wdio/cucumber-framework');
 
 const baseUrl = "https://www.imdb.com/";
 
-// Given(/^I am on the IMDB site$/, async () => {
-//     await browser.url(baseUrl);
-
-//     const result = await browser.getUrl();
-//     expect(result).toBe(baseUrl);
-// });
+// Given I am on IMDB website from top-rated-steps
 
 When(/^I click on the menu button$/, async () => {
-
+    browser.setWindowSize(1000, 900);
 	const button = await $('#imdbHeader-navDrawerOpen > svg');
    
     await button.click();
@@ -38,7 +33,6 @@ Given(/^I am in the menu on IMDB website$/, async () => {
 });
 
 When(/^I click the close button$/, async () => {
-	// const closeButton = await $('#imdbHeader > div.ipc-page-content-container.ipc-page-content-container--center.navbar__inner > aside > div > div._3rHHDKyPLOjL8tGKHWMRza > label > svg > path:nth-child(2)');
     const closeButton = await $('label[title="Close Navigation Drawer"]');
     await closeButton.click();
     
@@ -60,15 +54,12 @@ Given(/^I am in the menu$/, async () => {
 });
 
 When(/^I click on TV Shows$/, async () => {
-    // await $$('span[class="_2aunAih-uMfbdgTUIjnQMd"]')[1].click();
-    await $$('._2aunAih-uMfbdgTUIjnQMd')[1].click();
-	// await $('//*[@id="imdbHeader"]/div[2]/aside/div/div[2]/div/div[2]/div[1]/span/label/span[2]').click();
+    await $('[for="nav-link-categories-tvshows"]').click();
 });
 
 When(/^I click on TV News$/, async () => {
     
 	await $('=TV News')
-        // .waitForDisplayed({ timeout: 3000 })
         .click();
 
 });

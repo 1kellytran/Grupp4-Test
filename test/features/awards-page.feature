@@ -6,7 +6,6 @@ Feature: Awards page
         Given I am on the IMDb homepage
         When I click on the menu bar
         And  I click the Oscars in Awards & Events
-        # Kan vara 2 steg
         Then I can see results relating to the Oscars ceremony 
 
     Scenario: View best motion picture

@@ -16,7 +16,8 @@ When(/^I click the Oscars in Awards & Events$/, async () => {
 });
 
 Then(/^I can see results relating to the Oscars ceremony$/, async () => {
-    expect(await browser).toHaveUrl('https://www.imdb.com/oscars/?ref_=nv_ev_acd');
+    const browserUrl = await browser.getUrl();
+    expect(browserUrl).toContain('https://www.imdb.com/oscars/?ref_=nv_ev_acd');
 });
 
 // Scenario 2: View best motion picture
@@ -62,5 +63,6 @@ When(/^I click the IMDb-logo on the top left of the page$/, async () => {
 });
 
 Then(/^I will return to the IMDb homepage$/, async () => {
-    expect(await browser).toHaveUrl('https://www.imdb.com/?ref_=nv_home');
+    const browserUrl = await browser.getUrl();
+    expect(browserUrl).toContain('https://www.imdb.com/?ref_=nv_home');
 });

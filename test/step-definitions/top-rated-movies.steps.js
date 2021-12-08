@@ -40,10 +40,7 @@ Then(/^I can view IMDB Top 250 movies$/, async() => {
 
 
 Given(/^I am on Top office page$/, async() => {
-	//const url = 'https://www.imdb.com/chart/boxoffice?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=470df400-70d9-4f35-bb05-8646a1195842&pf_rd_r=J10BCJ621PVX24HQWAKD&pf_rd_s=right-4&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_ql_1'
 	await browser.url('https://www.imdb.com/chart/boxoffice?');
-	//const result = await browser.getUrl();
-	//expect(result).toBe(url);
 });
 
 When(/^I click on action in charts$/, async() => {
@@ -56,11 +53,9 @@ When(/^I click on action in charts$/, async() => {
 
 
 Then(/^I can view action movies$/, async() => {
-	 //const all_genres =await browser.getelementsByclassName('.genre')
 	 const  all_genres = await [$('.genre')]
 	 for(const action_genre of all_genres){
 		 await expect(action_genre).toHaveTextContaining("Action");
-  
 	 }
 });
 

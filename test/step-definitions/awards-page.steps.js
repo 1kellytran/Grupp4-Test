@@ -12,9 +12,7 @@ When(/^I click on the menu bar$/, async () => {
 })
 
 When(/^I click the Oscars in Awards & Events$/, async () => {
-    await $('aside[data-testid="drawer"]').waitForDisplayed({ timeout: 3000 });
-    const oscars = await $$('[role=menuitem]')[23];
-    await oscars.click();
+    await $('=Oscars').click();
 });
 
 Then(/^I can see results relating to the Oscars ceremony$/, async () => {
@@ -52,7 +50,6 @@ Then(/^I can see the actress' profile$/, async () => {
     await expect(actress).toBe('Frances McDormand');
 });
 
-// ALTERNATE SCENARIO
 // Senario 4: Back to IMDb homepage
 Given(/^I am on the actress' profile page$/, async () => {
     await browser.url('https://www.imdb.com/name/nm0000531/');
